@@ -1,11 +1,12 @@
 #ifndef QUEUE_H
 #define QUEUE_H
 
-
 /* a queue contains positive integer values. */
 typedef struct Queue
 {
-	// Complete the definition here
+	unsigned int* queueArray;
+	unsigned int maxSize;
+	unsigned int count;
 	
 } Queue;
 
