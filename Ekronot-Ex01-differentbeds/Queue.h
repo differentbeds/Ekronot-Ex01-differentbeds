@@ -1,6 +1,8 @@
 #ifndef QUEUE_H
 #define QUEUE_H
 
+#define DNE -1
+
 /* a queue contains positive integer values. */
 typedef struct Queue
 {
