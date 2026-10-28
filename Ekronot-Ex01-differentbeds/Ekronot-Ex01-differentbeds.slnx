@@ -3,5 +3,6 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
+  <Project Path="../Part-2-differentbeds/Part-2-differentbeds.vcxproj" Id="dbaf5030-9b6c-47d5-8964-91e4fe174365" />
   <Project Path="Ekronot-Ex01-differentbeds.vcxproj" Id="9bd0fcf7-7a69-4656-9a86-f9b84a47ac8f" />
 </Solution>
