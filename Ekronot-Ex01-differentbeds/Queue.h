@@ -18,5 +18,6 @@ int dequeue(Queue* q); // return element in top of queue, or -1 if empty
 
 bool isEmpty(Queue* s);
 bool isFull(Queue* s);
+bool isQueueExist(Queue* s);
 
 #endif /* QUEUE_H */

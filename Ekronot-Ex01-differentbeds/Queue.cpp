@@ -39,3 +39,33 @@ void cleanQueue(Queue* q)
 	delete[](q->queueArray);
 	q->queueArray = nullptr; // ensure no dangling pointer
 }
+
+/**
+* Check if a queue is empty
+* Input: a pointer to a queue
+* Output: true if the queue is empty, false otherwise
+*/
+bool isEmpty(Queue* q)
+{
+	if (!isQueueExist(q))
+	{
+		return false;
+	}
+	
+	return q->count == 0;
+}
+
+/**
+* Check if a queue is full
+* Input: a pointer to a queue
+* Output: true if the queue is full, false otherwise
+*/
+bool isFull(Queue* q)
+{
+	if (!isQueueExist(q))
+	{
+		return false;
+	}
+
+	return q->count == q->maxSize;
+}
