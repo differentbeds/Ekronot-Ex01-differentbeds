@@ -8,9 +8,10 @@
 */
 void initQueue(Queue* q, unsigned int size)
 {
-	q->queueArray = new unsigned int[size];
-	q->maxSize = size;
-	q->count = 0;
+	q->_queueArray = new unsigned int[size];
+	q->_maxSize = size;
+	q->_count = 0;
+	q->_front = 0;
 }
 
 /**
@@ -20,7 +21,7 @@ void initQueue(Queue* q, unsigned int size)
 */
 bool isQueueExist(Queue* s)
 {
-	if (!s || !(s->queueArray))
+	if (!s || !(s->_queueArray))
 	{
 		std::cout << "Queue does not exist" << std::endl;
 		return false;
@@ -41,8 +42,8 @@ void cleanQueue(Queue* q)
 		return;
 	}
 
-	delete[](q->queueArray);
-	q->queueArray = nullptr; // ensure no dangling pointer
+	delete[](q->_queueArray);
+	q->_queueArray = nullptr; // ensure no dangling pointer
 }
 
 /**
@@ -57,7 +58,7 @@ bool isEmpty(Queue* s)
 		return false;
 	}
 	
-	return s->count == 0;
+	return s->_count == 0;
 }
 
 /**
@@ -72,7 +73,7 @@ bool isFull(Queue* s)
 		return false;
 	}
 
-	return s->count == s->maxSize;
+	return s->_count == s->_maxSize;
 }
 
 /**
@@ -93,8 +94,9 @@ void enqueue(Queue* q, unsigned int newValue)
 		return;
 	}
 
-	(q->queueArray)[q->count] = newValue;
-	(q->count)++;
+	// the index of the next available element is the first element + the current amount of them, wrapping around the array with modulo
+	(q->_queueArray)[(q->_front + q->_count) % q->_maxSize] = newValue;
+	(q->_count)++;
 }
 
 int dequeue(Queue* q)
@@ -111,13 +113,8 @@ int dequeue(Queue* q)
 		return DNE;
 	}
 
-	firstElement = (q->queueArray)[0]; // save the first element before removing from the queue
-
-	for (int i = 1; i < q->maxSize; i++)
-	{
-		(q->queueArray)[i - 1] = (q->queueArray)[i];
-	}
-
-	(q->count)--;
+	firstElement = (q->_queueArray)[q->_front]; // save the first element before removing from the queue
+	q->_front = (q->_front + 1) % q->_maxSize; // move the front by 1 
+	(q->_count)--;
 	return firstElement;
 }

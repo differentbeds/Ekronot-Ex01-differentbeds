@@ -6,9 +6,10 @@
 /* a queue contains positive integer values. */
 typedef struct Queue
 {
-	unsigned int* queueArray;
-	unsigned int maxSize;
-	unsigned int count;
+	unsigned int* _queueArray;
+	unsigned int _maxSize;
+	unsigned int _count;
+	unsigned int _front;
 	
 } Queue;
 
