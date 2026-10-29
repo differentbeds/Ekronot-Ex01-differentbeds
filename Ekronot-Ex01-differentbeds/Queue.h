@@ -3,7 +3,9 @@
 
 #define DNE -1
 
-/* a queue contains positive integer values. */
+/* a queue contains positive integer values. this queue is circular.
+* i got the idea to replace the inefficient linear dequeue with a quicker dequeue from https://www.geeksforgeeks.org/dsa/difference-between-linear-queue-and-circular-queue/
+*/
 typedef struct Queue
 {
 	unsigned int* _queueArray;
