@@ -41,7 +41,7 @@ int removeNode(Node** head)
 
 	Node* temp = nullptr;
 
-	removedValue = (int)((*head)->data);
+	removedValue = (*head)->data;
 	temp = *head;
 	*head = (*head)->next;
 	delete(temp);
@@ -62,14 +62,13 @@ void cleanList(Node** head)
 		return;
 	}
 
-	Node* curr = *head;
-	Node* next = nullptr;
+	Node* curr = nullptr;
 
-	while (curr)
+	while (*head)
 	{
-		next = curr->next;
-		delete(curr);
-		curr = next;
+		curr = (*head)->next;
+		delete(*head);
+		*head = curr;
 	}
 
 	*head = nullptr; // dangling pointer handling
