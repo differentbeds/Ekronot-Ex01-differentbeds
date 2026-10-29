@@ -19,11 +19,14 @@ int main()
 		std::cout << removeNode(&head) << std::endl;
 	}
 	
-	// test clean
-	addNode(&head, 4);
-	addNode(&head, 5);
+	// test removing from an empty/nonexistent list
+	std::cout << removeNode(&head) << std::endl;
+	std::cout << removeNode(nullptr) << std::endl;
 
+	// test cleaning empty/nonexistent list
 	cleanList(&head);
+	cleanList(nullptr);
+
 	delete(head);
 
 	system("pause");
