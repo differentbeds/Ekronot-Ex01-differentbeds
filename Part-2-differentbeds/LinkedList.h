@@ -12,5 +12,6 @@ typedef struct Node
 
 void addNode(Node** head, unsigned int value);
 unsigned int removeNode(Node** head);
+void cleanList(Node** head); // deletes all nodes in the list
 
 #endif // LINKEDLIST_H

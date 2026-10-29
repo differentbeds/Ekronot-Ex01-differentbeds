@@ -18,3 +18,37 @@ void addNode(Node** head, unsigned int value)
 	n->next = *head;
 	*head = n;
 }
+
+unsigned int removeNode(Node** head)
+{
+	int removedValue = 0;
+	Node* temp = nullptr;
+
+	removedValue = (int)((*head)->data);
+	temp = *head;
+	*head = (*head)->next;
+	delete(temp);
+
+	return removedValue;
+}
+
+void cleanList(Node** head)
+{
+	if (!head || !(*head))
+	{
+		std::cout << "Nothing to clean" << std::endl;
+		return;
+	}
+
+	Node* curr = *head;
+	Node* next = nullptr;
+
+	while (curr)
+	{
+		next = curr->next;
+		delete(curr);
+		curr = next;
+	}
+
+	*head = nullptr; // dangling pointer handling
+}
