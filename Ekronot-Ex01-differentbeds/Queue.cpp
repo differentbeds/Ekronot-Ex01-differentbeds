@@ -13,6 +13,11 @@ void initQueue(Queue* q, unsigned int size)
 	q->count = 0;
 }
 
+/**
+* Check if a given queue exist, i.e., valid pointer and initialized array)
+* Input: a pointer to a queue
+* Output: true if the queue exists, false otherwise
+*/
 bool isQueueExist(Queue* s)
 {
 	if (!s || !(s->queueArray))
