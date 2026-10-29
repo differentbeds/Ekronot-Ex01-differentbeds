@@ -3,8 +3,7 @@
 
 #define DNE -1
 
-/* a queue contains positive integer values. this queue is circular.
-*/
+/* a queue contains positive integer values. this queue is circular. */
 typedef struct Queue
 {
 	unsigned int* _queueArray;

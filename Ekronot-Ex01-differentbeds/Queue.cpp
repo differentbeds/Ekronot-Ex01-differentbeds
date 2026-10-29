@@ -99,6 +99,11 @@ void enqueue(Queue* q, unsigned int newValue)
 	(q->_count)++;
 }
 
+/*
+* Remove the first element from a queue
+* Input: queue
+* Output: the removed value, or -1 if the queue is empty/does not exist
+*/
 int dequeue(Queue* q)
 {
 	int firstElement = DNE; // the value of the first element will be stored here. for now, it does not exist (DNE)

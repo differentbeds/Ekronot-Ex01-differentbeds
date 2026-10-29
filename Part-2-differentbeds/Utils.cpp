@@ -3,6 +3,11 @@
 
 #include <iostream>
 
+/*
+* Reverse an array using stack
+* Input: integer array, size of integer array
+* Output: n/a
+*/
 void reverse(int* nums, unsigned int size)
 {
 	Stack* stk = new Stack;
@@ -22,6 +27,11 @@ void reverse(int* nums, unsigned int size)
 	delete(stk);
 }
 
+/*
+* Populate an array of size 10 from user input and reverse it
+* Input: n/a
+* Output: the reversed array
+*/
 int* reverse10()
 {
 	int* nums = new int[SIZE];
