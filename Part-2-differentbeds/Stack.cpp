@@ -39,7 +39,7 @@ bool isEmpty(Stack* s)
 		return false; // a nonexistent stack cannot be empty
 	}
 
-	return s->first = nullptr;
+	return s->first == nullptr;
 }
 
 /*
