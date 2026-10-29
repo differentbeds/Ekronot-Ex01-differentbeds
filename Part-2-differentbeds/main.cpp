@@ -1,33 +1,24 @@
 #include <iostream>
-#include "LinkedList.h"
+#include "Stack.h"
 
 int main()
 {
-	Node* head = nullptr;
+	Stack* s = new Stack;
+	initStack(s);
 
-	// test adding nodes
-	addNode(&head, 1);
-	addNode(&head, 2);
-	addNode(&head, 3);
+	push(s, 1);
+	push(s, 2);
+	push(s, 3);
 
-	std::cout << head->data << std::endl;
-	std::cout << head->next->data << std::endl;
-	std::cout << head->next->next->data << std::endl;
-
-	for(int i = 0; i < 3; i++)
-	{
-		std::cout << removeNode(&head) << std::endl;
-	}
+	std::cout << pop(s) << std::endl;
+	std::cout << pop(s) << std::endl;
+	std::cout << pop(s) << std::endl;
 	
-	// test removing from an empty/nonexistent list
-	std::cout << removeNode(&head) << std::endl;
-	std::cout << removeNode(nullptr) << std::endl;
+	// pop from empty stack test
+	std::cout << pop(s) << std::endl;
 
-	// test cleaning empty/nonexistent list
-	cleanList(&head);
-	cleanList(nullptr);
-
-	delete(head);
+	cleanStack(s);
+	delete(s);
 
 	system("pause");
 	return 0;

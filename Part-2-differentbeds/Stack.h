@@ -3,6 +3,8 @@
 
 #include "LinkedList.h"
 
+#define DNE -1
+
 /* a positive-integer value stack, with no size limit */
 typedef struct Stack
 {
