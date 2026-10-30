@@ -14,8 +14,8 @@ void addNode(Node** head, unsigned int value)
 	}
 
 	Node* n = new Node;
-	n->data = value;
-	n->next = *head;
+	n->_data = value;
+	n->_next = *head;
 	*head = n;
 }
 
@@ -41,9 +41,9 @@ int removeNode(Node** head)
 
 	Node* temp = nullptr;
 
-	removedValue = (*head)->data;
+	removedValue = (*head)->_data;
 	temp = *head;
-	*head = (*head)->next;
+	*head = (*head)->_next;
 	delete(temp);
 
 	return removedValue;
@@ -66,7 +66,7 @@ void cleanList(Node** head)
 
 	while (*head)
 	{
-		curr = (*head)->next;
+		curr = (*head)->_next;
 		delete(*head);
 		*head = curr;
 	}

@@ -8,7 +8,7 @@
 /* a positive-integer value stack, with no size limit */
 typedef struct Stack
 {
-	Node* first;
+	Node* _first;
 } Stack;
 
 void push(Stack* s, unsigned int element);

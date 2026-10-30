@@ -39,7 +39,7 @@ bool isEmpty(Stack* s)
 		return false; // a nonexistent stack cannot be empty
 	}
 
-	return s->first == nullptr;
+	return s->_first == nullptr;
 }
 
 /*
@@ -49,7 +49,7 @@ bool isEmpty(Stack* s)
 */
 void initStack(Stack* s)
 {
-	s->first = nullptr;
+	s->_first = nullptr;
 }
 
 /*
@@ -59,7 +59,7 @@ void initStack(Stack* s)
 */
 void cleanStack(Stack* s)
 {
-	cleanList(&(s->first));
+	cleanList(&(s->_first));
 }
 
 /*
@@ -71,7 +71,7 @@ void push(Stack* s, unsigned int element)
 {
 	if (isStackExist(s))
 	{
-		addNode(&(s->first), element);
+		addNode(&(s->_first), element);
 	}
 }
 
@@ -84,7 +84,7 @@ int pop(Stack* s)
 {
 	if (isStackExist(s) && !isEmpty(s))
 	{
-		return removeNode(&(s->first));
+		return removeNode(&(s->_first));
 	}
 	return DNE;
 }

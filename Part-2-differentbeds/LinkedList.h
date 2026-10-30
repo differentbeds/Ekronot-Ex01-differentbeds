@@ -8,8 +8,8 @@
 */
 typedef struct Node
 {
-	unsigned int data;
-	Node* next;
+	unsigned int _data;
+	Node* _next;
 } Node;
 
 void addNode(Node** head, unsigned int value);
